@@ -1,0 +1,38 @@
+<section fxLayoutAlign="center center" style="height: 100%;"> 
+    <mat-card fxFlex="500px" fxFlex.xs="100%" class="mat-elevation-z10">
+  
+      <mat-card-title fxLayoutAlign="center">Login</mat-card-title>
+  
+      <form  #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+  
+        <mat-card-content fxLayout="column">
+  
+          <mat-label>{{loginConfig?.label_user}}</mat-label>
+          <mat-form-field fxFlex appearance="fill">
+            <input type='text' name='username' ngModel matInput required>
+          </mat-form-field>
+  
+          <mat-label>{{loginConfig?.label_pwd}}</mat-label>
+          <mat-form-field fxFlex appearance="fill">
+            <input [type]="hidePassword ? 'password' : 'text'" name='password' ngModel matInput required autocomplete="on">
+            <button type="button" tabindex="-1" mat-icon-button matSuffix C="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+              <!-- <fa-icon *ngIf="hidePassword" class="fa-icon" [icon]="faEye"></fa-icon> -->
+              <!-- <fa-icon *ngIf="!hidePassword" class="fa-icon" [icon]="faEyeSlash"></fa-icon> -->
+            </button>
+          </mat-form-field>
+  
+          <mat-label>{{loginConfig?.forgot_password}}</mat-label>
+          <mat-form-field fxFlex appearance="fill">
+            <input type='text' name='company' ngModel matInput>
+          </mat-form-field>
+  
+          <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-flat-button type="submit" color="primary" fxFlex.xs fxFlex="20%">
+              Login
+            </button>
+          </div>
+    
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </section>
