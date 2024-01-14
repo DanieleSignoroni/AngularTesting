@@ -83,6 +83,8 @@ export class LoginComponent implements OnInit{
           this.router.navigate(['ui']);
         }
       });
+    }else{
+      window.alert('Form not valid');
     }
   }
 

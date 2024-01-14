@@ -4,15 +4,15 @@
       <mat-card-title fxLayoutAlign="center">Login</mat-card-title>
   
       <form  #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
-  
+        
         <mat-card-content fxLayout="column">
-  
-          <mat-label>{{loginConfig?.label_user}}</mat-label>
+          <img [src]="loginConfig?.logo_login" alt="Login Logo">
+          <mat-label>{{loginConfig?.label_username}}</mat-label>
           <mat-form-field fxFlex appearance="fill">
             <input type='text' name='username' ngModel matInput required>
           </mat-form-field>
   
-          <mat-label>{{loginConfig?.label_pwd}}</mat-label>
+          <mat-label>{{loginConfig?.label_password}}</mat-label>
           <mat-form-field fxFlex appearance="fill">
             <input [type]="hidePassword ? 'password' : 'text'" name='password' ngModel matInput required autocomplete="on">
             <button type="button" tabindex="-1" mat-icon-button matSuffix C="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
@@ -21,7 +21,7 @@
             </button>
           </mat-form-field>
   
-          <mat-label>{{loginConfig?.forgot_password}}</mat-label>
+          <mat-label>{{loginConfig?.label_btn_submit}}</mat-label>
           <mat-form-field fxFlex appearance="fill">
             <input type='text' name='company' ngModel matInput>
           </mat-form-field>
